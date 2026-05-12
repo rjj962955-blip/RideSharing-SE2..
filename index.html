@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusRide - Home</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .navbar {
+            background-color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1e88e5;
+        }
+
+        .links a {
+            margin-left: 22px;
+            text-decoration: none;
+            color: #1e88e5;
+            font-size: 15px;
+        }
+
+        .links a:hover {
+            color: #1565c0;
+        }
+
+        .home-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 80px;
+        }
+
+        .home-text {
+            width: 55%;
+        }
+
+        .home-text h1 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .home-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn-start {
+            background-color: #1e88e5;
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        .btn-start:hover {
+            background-color: #1565c0;
+        }
+
+        .icons {
+            font-size: 70px;
+            color: #1e88e5;
+            display: flex;
+            gap: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">CampusRide.</div>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="create-ride.html">Create Ride</a>
+            <a href="find-ride.html">Find Ride</a>
+            <a href="profile.html">Profile</a>
+            <a href="login.html">Log Out</a>
+        </div>
+    </div>
+
+    <div class="home-container">
+
+        <div class="home-text">
+            <h1>Welcome to CampusRide!</h1>
+
+            <p>
+                <strong>Student Ride-Sharing Platform for Imam University</strong><br><br>
+                CampusRide helps Imam University students connect, coordinate, and share rides easily and safely.
+                From carpooling to class, to sharing costs with verified students, we make every trip simpler and smarter.
+            </p>
+
+            <button class="btn-start" onclick="window.location.href='create-ride.html'">
+                Start Your Campus Ride Today!
+            </button>
+        </div>
+
+        <div class="icons">
+            🏫 🚗 📍
+        </div>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusRide - Sign Up</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left {
+            width: 50%;
+            background: #ffffff;
+            padding: 60px 70px;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #0b4fa8; /* الأزرق الصحيح */
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 26px;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 11px;
+            border-radius: 8px;
+            border: 1px solid #cfcfcf;
+            font-size: 14px;
+        }
+
+        .btn {
+            width: 100%;
+            background-color: #0b4fa8; /* الأزرق الصحيح */
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background-color: #083c82;
+        }
+
+        #error {
+            margin-top: 12px;
+            font-size: 14px;
+            color: red;
+        }
+
+        .right {
+            width: 50%;
+            background-color: #03387d; /* الأزرق الصحيح */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .right h1 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .right p {
+            font-size: 17px;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <div class="logo">CampusRide</div>
+
+        <h2>Sign Up</h2>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input id="email" type="email" placeholder="example@imamu.edu.sa">
+        </div>
+
+        <div class="form-group">
+            <label>Password (6-digit code)</label>
+            <input id="password" type="password" placeholder="Enter password">
+        </div>
+
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input id="confirm" type="password" placeholder="Re-enter password">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input id="phone" type="text" placeholder="05xxxxxxxx">
+        </div>
+
+        <button class="btn" onclick="validateSignup()">Create Account</button>
+
+        <p id="error"></p>
+    </div>
+
+    <div class="right">
+        <h1>Welcome to CampusRide!</h1>
+        <p>Create your account and start your campus journey.</p>
+    </div>
+
+</div>
+
+<script>
+    function validateSignup() {
+        let email = document.getElementById("email").value.trim();
+        let password = document.getElementById("password").value.trim();
+        let confirm = document.getElementById("confirm").value.trim();
+        let phone = document.getElementById("phone").value.trim();
+        let error = document.getElementById("error");
+
+        error.style.color = "red";
+
+        if (email === "" || password === "" || confirm === "" || phone === "") {
+            error.textContent = "❌ الرجاء تعبئة جميع الحقول";
+            return;
+        }
+
+        if (!email.endsWith("@imamu.edu.sa")) {
+            error.textContent = "❌ يجب استخدام الإيميل الجامعي (@imamu.edu.sa)";
+            return;
+        }
+
+        if (password.length < 6) {
+            error.textContent = "❌ كلمة المرور يجب أن تكون 6 أرقام أو أكثر";
+            return;
+        }
+
+        if (password !== confirm) {
+            error.textContent = "❌ كلمتا المرور غير متطابقتين";
+            return;
+        }
+
+        if (!phone.match(/^05\d{8}$/)) {
+            error.textContent = "❌ رقم الجوال غير صحيح (يجب أن يبدأ بـ 05 ويتكون من 10 أرقام)";
+            return;
+        }
+
+        error.style.color = "green";
+        error.textContent = "✔ تم إنشاء الحساب بنجاح!";
+
+        setTimeout(() => {
+          window.location.href = "index.html";
+
+        }, 900);
+    }
+</script>
+
+</body>
+</html>
