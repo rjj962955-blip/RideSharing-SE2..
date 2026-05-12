@@ -2,8 +2,8 @@
   "name": "ridesharing-se2",
   "version": "1.0.0",
   "description": "Testing setup for GitHub Actions",
-  "scripts": {
-    "test": "node tests/signup.test.js",
-    "lint": "node tests/lint.test.js"
-  }
+ "scripts": {
+  "test": "node tests/signup.test.js",
+  "lint": "node tests/lint.test.js"
+}
 }
