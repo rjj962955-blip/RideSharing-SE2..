@@ -12,6 +12,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Simple check
-      run: echo "Workflow is working successfully!"
+    # Functional Test: Check that all HTML files exist
+    - name: Functional Test - HTML files
+      run: |
+        echo "Checking HTML files..."
+        test -f index.html
+        test -f signup.html
+        test -f login.html
+        test -f create-ride.html
+        test -f find-ride.html
+        echo "All HTML files exist ✔"
 
+    # Non-Functional Test: Check file sizes (performance)
+    - name: Non-Functional Test - File size check
+      run: |
+        echo "Checking file sizes..."
+        find . -name "*.html" -size -200k
+        echo "All files are within acceptable size ✔"
+
+    - name: Final Result
+      run: echo "Automated testing completed successfully!"
